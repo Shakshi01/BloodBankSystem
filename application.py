@@ -30,14 +30,14 @@ def login():
         global x
         x=loginEntry.get()
         
-        cursor.execute("select * from employee, medicalassistant where Eemployee_id=employee_id and login_id LIKE 'ME%' AND login_id=?",(loginEntry.get(),))
-        row2=cursor.fetchone()
-        cursor.execute("select * from employee, receptionist where Eemployee_id=employee_id and login_id LIKE 'RE%' AND login_id=?",(loginEntry.get(),))
-        row3=cursor.fetchone()
-        cursor.execute("select * from employee, bbt where Eemployee_id=employee_id and login_id LIKE 'BB%' AND login_id=?",(loginEntry.get(),))
-        row4=cursor.fetchone()
-        cursor.execute("select * from employee, admin where Eemployee_id=employee_id and login_id LIKE 'AD%' AND login_id=?",(loginEntry.get(),))
-        row5=cursor.fetchone()
+        cursor.execute("select * from employee",(loginEntry.get(),))
+        #row2=cursor.fetchone()
+        #cursor.execute("select * from employee, receptionist where Eemployee_id=employee_id and login_id LIKE 'RE%' AND login_id=?",(loginEntry.get(),))
+        #row3=cursor.fetchone()
+        #cursor.execute("select * from employee, bbt where Eemployee_id=employee_id and login_id LIKE 'BB%' AND login_id=?",(loginEntry.get(),))
+        #row4=cursor.fetchone()
+        #cursor.execute("select * from employee, admin where Eemployee_id=employee_id and login_id LIKE 'AD%' AND login_id=?",(loginEntry.get(),))
+        #row5=cursor.fetchone()
         
         databasepassword = ""
         if row1: 
@@ -61,6 +61,7 @@ def login():
     except sqlite3.DatabaseError as e:
         connection.rollback()
         messagebox.showerror("Failed ", e)
+        print(e.message)
     except Exception as u:
         messagebox.showerror('Error', 'Enter All Details')
         

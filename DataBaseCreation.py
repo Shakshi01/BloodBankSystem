@@ -36,7 +36,7 @@ def createDatabase():
   contact_number    integer not null,
   email_address varchar(20),
   Eemployee_id      varchar(7) not null,
-  login_id varchar(20) not null,
+  mlogin_id varchar(20) not null,
   primary key (Eemployee_id),
   foreign key (Eemployee_id) references employee(employee_id)
   ON UPDATE CASCADE
@@ -48,7 +48,7 @@ def createDatabase():
   contact_number    integer not null,
   email_address varchar(20),
   Eemployee_id      varchar(7) not null,
-  login_id varchar(20) not null,
+  rlogin_id varchar(20) not null,
   primary key (Eemployee_id),
   foreign key (Eemployee_id) references employee(employee_id)
   ON UPDATE CASCADE
@@ -60,7 +60,7 @@ def createDatabase():
   Eemployee_id      varchar(7) not null,
   contact_number    integer not null,
   email_address varchar(20),
-  login_id varchar(20) not null,
+  blogin_id varchar(20) not null,
   Bbank_id VARCHAR not null,
   primary key (Eemployee_id),
   foreign key (Eemployee_id) references employee(employee_id),
@@ -75,7 +75,7 @@ def createDatabase():
   Eemployee_id      varchar(7) not null,
   contact_number    integer not null,
   email_address varchar(20),
-  login_id varchar(20) not null,
+  alogin_id varchar(20) not null,
   Bbank_id VARCHAR not null,
   primary key (Eemployee_id),
   foreign key (Eemployee_id) references employee(employee_id),
@@ -92,7 +92,7 @@ def createDatabase():
   blood_group varchar(3) not null,
   address varchar(50),
   password varchar(15) not null,
-  login_id varchar(20) not null,
+  dlogin_id varchar(20) not null,
   primary key (d_id,login_id)
 );"""
     cursor.execute(table7)
@@ -104,8 +104,8 @@ def createDatabase():
   blood_group varchar(3),
   address varchar(50),
   password varchar(15) not null,
-  login_id varchar(20) not null,
-  primary key (patient_id,login_id)
+  plogin_id varchar(20) not null,
+  primary key (patient_id,plogin_id)
 );"""
     cursor.execute(table8)
 
